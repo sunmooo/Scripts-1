@@ -13,9 +13,9 @@ on:
 jobs:
   build:
     env:
-      YOUTH_READ5: ${{ secrets.YOUTH_READ8 }}
-      YOUTH_READ6: ${{ secrets.YOUTH_READ9 }}
-      YOUTH_READ2: ${{ secrets.YOUTH_READ10 }}
+      YOUTH_READ8: ${{ secrets.YOUTH_READ8 }}
+      YOUTH_READ9: ${{ secrets.YOUTH_READ9 }}
+      YOUTH_READ10: ${{ secrets.YOUTH_READ10 }}
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
