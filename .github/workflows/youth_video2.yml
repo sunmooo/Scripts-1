@@ -28,27 +28,27 @@ jobs:
         run: |
           npm install
       - name: '运行 【中青看点账号2-视频观看-51个】'
-        if: env.YOUTH_VIDEO
+        if: env.YOUTH_VIDEO8
         run: |
           node Task/Youth_Read.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_VIDEO }}
+          YOUTH_READ: ${{ secrets.YOUTH_VIDEO8 }}
 
       - name: '运行 【中青看点账号2-视频观看-50个】'
-        if: env.YOUTH_VIDEO2
+        if: env.YOUTH_VIDEO9
         run: |
           node Task/Youth_Read.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_VIDEO2 }}
+          YOUTH_READ: ${{ secrets.YOUTH_VIDEO9 }}
       - name: '运行 【中青看点账号2-视频观看1-55个】'
-        if: env.YOUTH_VIDEO3
+        if: env.YOUTH_VIDEO10
         run: |
           node Task/Youth_Read.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_VIDEO3 }}
+          YOUTH_READ: ${{ secrets.YOUTH_VIDEO10 }}
       - name: '运行 【中青看点账号2-视频观看2-50个】'
-        if: env.YOUTH_VIDEO4
+        if: env.YOUTH_VIDEO11
         run: |
           node Task/Youth_Read.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_VIDEO4 }}
+          YOUTH_READ: ${{ secrets.YOUTH_VIDEO11 }}
