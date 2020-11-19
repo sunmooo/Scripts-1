@@ -13,9 +13,9 @@ on:
 jobs:
   build:
     env:
-      YOUTH_VIDEO2: ${{ secrets.YOUTH_VIDEO8 }}
-      YOUTH_VIDEO3: ${{ secrets.YOUTH_VIDEO9 }}
-      YOUTH_VIDEO4: ${{ secrets.YOUTH_VIDEO10 }}
+      YOUTH_VIDEO8: ${{ secrets.YOUTH_VIDEO8 }}
+      YOUTH_VIDEO9: ${{ secrets.YOUTH_VIDEO9 }}
+      YOUTH_VIDEO10: ${{ secrets.YOUTH_VIDEO10 }}
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
