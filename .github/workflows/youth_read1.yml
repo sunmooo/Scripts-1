@@ -1,0 +1,69 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: youth_read1
+
+on:
+  workflow_dispatch:
+  # 账号越多文章越多，运行一次消耗的时间也越长，文章和视频不要一块运行，cron自己看着写
+  schedule:
+     - cron: '1 16-23/3 * * *'
+  watch:
+    types: started
+jobs:
+  build:
+    env:
+      YOUTH_READ5: ${{ secrets.YOUTH_READ5 }}
+      YOUTH_READ6: ${{ secrets.YOUTH_READ6 }}
+      YOUTH_READ7: ${{ secrets.YOUTH_READ7 }}
+      YOUTH_READ71: ${{ secrets.YOUTH_READ71 }}
+      YOUTH_READ72: ${{ secrets.YOUTH_READ72 }}
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: npm install
+        run: |
+          npm install
+                 
+      - name: '运行 【中青看点账号2-文章阅读1-54篇】'
+        if: env.YOUTH_READ5         
+        run: |
+          node Task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ5 }}
+
+      - name: '运行 【中青看点账号2-文章阅读2-54篇】'
+        if: env.YOUTH_READ6
+        run: |
+          node Task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ6 }}
+      - name: '运行 【中青看点账号2-文章阅读3-35篇】'
+        if: env.YOUTH_READ7
+        run: |
+          node Task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ7 }}
+      - name: '运行 【中青看点账号2-文章阅读1-54篇】'
+        if: env.YOUTH_READ71
+        run: |
+          node Task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ71 }}
+      - name: '运行 【中青看点账号2-文章阅读2-54篇】'
+        if: env.YOUTH_READ72
+        run: |
+          node Task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ72 }}
+      - name: '运行 【中青看点账号2-文章阅读3-54篇】'
+        if: env.YOUTH_READ73
+        run: |
+          node Task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ73 }}
