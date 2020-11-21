@@ -14,6 +14,7 @@ jobs:
   build:
     env:
       YOUTH_VIDEO: ${{ secrets.YOUTH_VIDEO }}
+      YOUTH_VIDEO1: ${{ secrets.YOUTH_VIDEO1 }}
       YOUTH_VIDEO2: ${{ secrets.YOUTH_VIDEO2 }}
       YOUTH_VIDEO3: ${{ secrets.YOUTH_VIDEO3 }}
       YOUTH_VIDEO4: ${{ secrets.YOUTH_VIDEO4 }}
